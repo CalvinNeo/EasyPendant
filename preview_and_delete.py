@@ -41,8 +41,8 @@ def preview_doc(f):
     deuni = docText.decode('utf8')
     return deuni[0: min(200, len(docText))].encode('utf8')
 
-def walk():
-    for path, dirs, files in os.walk(ur"E:\下载\Browser"):
+def walk(path):
+    for path, dirs, files in os.walk(path):
         # 返回值说明:
         # path-> 该path下的dirs和files
         # 所有的dirs都会成为path并被枚举子元素
@@ -63,7 +63,5 @@ def walk():
 
                 
 if __name__ == '__main__':
-    # print preview_doc('z.docx')
-    walk()
-    # print repr('你好'.encode('hex'))
-    # print repr('你好'.decode('utf8'))
+    walk(ur"C:/test")
+
