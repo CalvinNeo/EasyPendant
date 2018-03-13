@@ -4,17 +4,11 @@ import os
 import shutil
 from nt import chdir
 
-if __name__ == '__main__':
+def interative(path):
     delfile = {'sdf', 'iobj', 'ipdb', 'obj', 'pdb', 'ilk', 'tlog', 'pch', 'ipch', 'db'}
     deldir = {'tlog'}
     prjbase = []
-    for path, dirs, files in os.walk(r"F:\Codes\COMPETITION\ACM"):
-        # 返回值说明:
-        # path-> 该path下的dirs和files
-        # 所有的dirs都会成为path并被枚举子元素
-    # for ele in os.listdir("F:\\Codes\\Python\\EasyPendant")
-    #     # 返回值说明:
-    #     # 返回path下的所有直接子元素
+    for path, dirs, files in os.walk(path):
         for f in files:
             surfix = os.path.splitext(f)[1][1:]
             if surfix == 'sln':
@@ -37,3 +31,6 @@ if __name__ == '__main__':
 
     for item in prjbase:
         print item.decode('gbk').encode('utf8')
+
+if __name__ == '__main__':
+    interative(r"F:\Codes\COMPETITION\ACM")

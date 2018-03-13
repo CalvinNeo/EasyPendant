@@ -59,4 +59,6 @@ target/
 # meta
 *.docx
 
+no_publish/
+
 

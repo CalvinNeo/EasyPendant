@@ -31,24 +31,14 @@ def preview_doc(f):
     docText =  '\n'.join([
         paragraph.text.encode('utf8') for paragraph in document.paragraphs if paragraph.text.encode('utf8').strip() != ''
     ])
-    # http://www.jb51.net/article/17560.htm
-    # 字符串在Python内部的表示是unicode编码，因此，在做编码转换时，通常需要以unicode作为中间编码，即先将其他编码的字符串解码（decode）成unicode，再从unicode编码（encode）成另一种编码。 
-    # decode的作用是将其他编码的字符串转换成unicode编码，如str1.decode('gb2312')，表示将gb2312编码的字符串str1转换成unicode编码。 
-    # encode的作用是将unicode编码转换成其他编码的字符串，如str2.encode('gb2312')，表示将unicode编码的字符串str2转换成gb2312编码。 
-
-    # ref http://stackoverflow.com/questions/2153920/returning-the-first-n-characters-of-a-unicode-string
-    # 对utf8使用slicing可能会导致错误, 这里得先decode到内部码
     deuni = docText.decode('utf8')
     return deuni[0: min(200, len(docText))].encode('utf8')
 
-def walk(path):
+def walk(path, direct = False):
+    # for ele in os.listdir(path) # for direct
     for path, dirs, files in os.walk(path):
-        # 返回值说明:
-        # path-> 该path下的dirs和files
-        # 所有的dirs都会成为path并被枚举子元素
-    # for ele in os.listdir("F:\\Codes\\Python\\EasyPendant")
-    #     # 返回值说明:
-    #     # 返回path下的所有直接子元素
+        # path = dirs + files
+        # All dirs will become path so as to be visited iteratively
         for f in files:
             surfix = os.path.splitext(f)[1][1:]
             name = os.path.splitext(f)[0]

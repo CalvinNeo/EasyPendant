@@ -1,20 +1,23 @@
 # EasyPendant
-make life easier
+EasyPendant is a collection of tools to MAKE LIFE EASIER AGAIN!
 
-## Scripts
-### urp_autocomplete:
-	grade your teacher automaticly
-	need js-injector
+## urp_autocomplete:
+Grade your teacher automaticly, for URP system.
+Need Chrome App js-injector.
 
-### vs_cleandir:
-	clean your c++ building thins automaticly
+## vs-cleandir:
+Clean your C++ building stuffs automaticly.
 	
-### preview_and_delete
-	preview your document files and:
-	1. delete some of them
-	2. preview their copies and choose some to delete
-	3. check if there's corresponding zip files
+## preview-and-delete
+This tool is used to organize repeated documents files in your file system interatively.
+Preview your document files and you can do the following operations iteratively:
+1. Delete some of them
+2. Preview their copies and choose some to delete
+3. Check if there's corresponding zip files
 	
-### join_codes
-	merge code files with certain patterns
+## join-codes
+Merge code files with certain patterns.
+
+## retrieve-paste-ubuntu
+Retrieve all codes uploaded to [paste.ubuntu.com](paste.ubuntu.com).
 
